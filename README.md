@@ -36,8 +36,6 @@ python -m pip install -r requirements.txt
 - Codex `documents`：DOCX 读取、渲染和交付验证。
 - Codex `computer-use`：仅在需要 Microsoft Word 界面终检时使用。
 
-前两个公开上游仓库已 Fork 到 `Essarai` 账号；Codex 内置能力按产品许可使用，不复制到本仓库。
-
 ## 目录
 
 ```text
