@@ -20,6 +20,10 @@ Give every worker:
 - the target journal information available for that manuscript;
 - the complete single-manuscript workflow and relevant companion skills.
 
+Within each manuscript pipeline, follow `full-review-orchestration.md`: keep all text-dependent review passes in that manuscript's primary worker/context. Use at most one optional evidence-verification execution, and only when external source material would materially crowd the primary context. The verifier receives a minimal verification packet rather than the full manuscript and never writes the DOCX. Its findings return to the manuscript's existing issue ledger.
+
+Keep at most two model executions active across the batch. An optional verifier consumes one of those two slots, belongs to its parent manuscript pipeline, and does not permit the coordinator to admit an additional manuscript. Do not create separate contexts for grammar, formatting, structure, English, or final aggregation.
+
 Do not combine full text, extracted paragraphs, candidate lists, issue ledgers, or reference lists from different manuscripts in one review context. Shared journal rules may be cached, but each worker must apply and verify them independently.
 
 ## Required coverage record
@@ -51,8 +55,8 @@ A worker is complete only when all of the following are true:
 
 1. The full review checklist has been applied to every applicable document component.
 2. An issue ledger with exact minimum-range targets has been finalized.
-3. A separate comment-only DOCX has been produced without overwriting the source.
-4. Comment structure, target ranges, visible-text preservation, and package integrity have passed verification.
+3. A separate color-corrected DOCX with explanatory native comments has been produced under `word-edit-output.md`, or a comment-only copy if explicitly requested, without overwriting the source.
+4. Comment structure, final target ranges, ledger-authorized changes and colors, preservation of unrelated content, and package integrity have passed verification.
 5. The reviewed DOCX has been rendered and inspected as required by the documents workflow.
 6. The worker reports output path, comment count, coverage, verification results, and explicit limitations.
 

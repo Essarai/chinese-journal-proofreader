@@ -1,7 +1,7 @@
 interface:
   display_name: "中文期刊 Word 审校"
-  short_description: "逐篇独立审校中文期刊 Word 稿件并生成原位批注副本"
-  default_prompt: "使用 $chinese-journal-proofreader 审校中文期刊 Word 稿件，仅添加批注，不直接改正文；批量任务按最大并发2逐篇独立执行。"
+  short_description: "逐篇审校中文期刊 Word 稿件并生成状态分色批注副本"
+  default_prompt: "使用 $chinese-journal-proofreader 审校中文期刊 Word 稿件，在独立副本中直接修改确定错误；蓝色表示已修改，红色表示需作者修改，橙色表示待核实。保留原有批注并新增具体说明；批量任务按最大并发2逐篇独立执行。"
 
 policy:
   allow_implicit_invocation: true

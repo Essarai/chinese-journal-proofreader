@@ -13,8 +13,29 @@ Use this checklist for a complete Chinese journal manuscript review. Apply only 
 
 ## 2. Chinese language and typography
 
+### Sentence-level grammar and meaning
+
+Read every Chinese sentence in the applicable manuscript components, including abstracts, body text, notes, and prose in table cells and captions. Check clause relationships and surrounding context, not isolated keywords. For a suspected defect, identify the sentence's subject/topic, predicate, and required objects or complements, then check how modifiers and coordinated clauses attach.
+
+For long sentences, sketch each clause in reading order and test every shared predicate against every coordinated object. Recheck the referent after each subject switch; compare only entities at the same level (e.g. text with text, source volume with source volume); identify whether paired connectives link parallel, causal, or contrastive claims. If a repair would choose the author's intended actor, source, chronology, or inference strength, keep the original and ask a precise author question. Keep status (`已修改` / `需作者修改` / `待核实`) separate from the grammatical category and use the status colors in `word-edit-output.md`.
+
+- **成分残缺 (missing constituents):** Check for a missing subject, predicate, required object, complement, or head word; missing necessary prepositions; and prepositional constructions that leave the main clause without a subject. Confirm that the missing content cannot be recovered unambiguously from context before flagging it.
+- **搭配不当 (incompatible combinations):** Check subject–predicate, verb–object, modifier–head, adverbial–predicate, and predicate–complement relationships, plus paired connectives. When a verb or modifier is shared by coordinated items, check its compatibility with each item separately; for example, “提高服务质量和服务范围” needs separate verbs, such as “提高服务质量、扩大服务范围”.
+- **成分赘余 (redundancy):** Check duplicated constituents or meanings and unnecessary prepositions, particles, and stacked modifiers. Distinguish redundant wording from necessary terminology repetition or deliberate emphasis.
+- **语序不当 (word order):** Check modifier placement and scope, ordering of multiple modifiers, connective placement relative to clause subjects, and the logical or temporal sequence of coordinated actions. Suggest reordering only when the current order damages grammar or changes or obscures meaning.
+- **句式杂糅与结构失衡 (mixed or broken constructions):** Check merged sentence patterns, an unmarked subject switch, an unfinished opening construction, and nonparallel coordinated clauses. For example, “原因是……造成的” mixes “原因是……” with “是由……造成的”; choose a complete construction that preserves the intended explanation.
+- **表意与逻辑 (meaning and local logic):** Check unclear pronoun references, ambiguous modifier scope, incompatible comparison objects, mismatched one-sided/two-sided formulations, unintended negation, and inconsistent levels in parallel lists. Interpret negation and connective relationships in the full sentence; do not label an unusual form erroneous on keyword matches alone.
+
+### Context and correction decisions
+
+- Chinese sentences need not contain an explicit subject–verb–object sequence. Accept contextually clear shared subjects or objects, ordinary subjectless and existential sentences, and appropriate nominal headings, captions, or table labels. Do not add constituents simply to fill a template.
+- A long sentence is not automatically defective. Recommend splitting only when clause structure, reference, or readability suffers, preserving conditions, negation, causal strength, and technical meaning.
+- Before proposing a replacement, reread the sentence and its context to ensure the repair resolves the stated defect without introducing another. Give one minimal, usable correction for a confirmed error. If the intended actor, object, or relationship is uncertain, use `【需作者修改｜语法】` and explain what needs clarification rather than inventing content. Treat an optional improvement as an editorial suggestion.
+- Use specific comments such as `【已修改｜语法·成分残缺】` or `【需作者修改｜语法·搭配不当】`: identify the missing constituent or incompatible pair, explain the effect briefly, and give the replacement or a concrete author question. For an omission, anchor the comment to the smallest existing phrase or clause that exposes the gap; do not invent a `target` absent from the source.
+
+### Wording and typography
+
 - Typos, duplicated or missing characters, homophones, malformed fixed phrases.
-- Broken syntax, missing subjects or prepositions, ambiguous modifiers, overlong sentences, incomplete parallel structures.
 - Terminology consistency, official names, abbreviations, and first-use definitions.
 - Full-width/half-width punctuation, quotation marks, book-title marks, brackets, ranges, slashes, spaces, and mixed Chinese-English text.
 - Numerals, dates, percentages, units, thousands separators, and figure/table references.

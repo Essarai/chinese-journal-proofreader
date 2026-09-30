@@ -1,6 +1,6 @@
 # DOCX native-comment workflow
 
-Use this workflow when the deliverable must be a Word file with review comments.
+Use this workflow for native comments. For the default direct-edit deliverable, first read `word-edit-output.md` for edits, colors, ledger fields, and final-text anchors. The JSON below is the comment-insertion payload, not the complete edit ledger.
 
 ## Before editing
 
@@ -23,7 +23,7 @@ Record each issue as:
 {
   "anchor": "a unique substring used only to locate the paragraph or cell",
   "target": "the exact smallest text range that should be highlighted",
-  "comment": "【引文】What is wrong, the evidence, and the proposed action or replacement.",
+  "comment": "【待核实｜引文·页码】Explain the conflict, source to check, and action after verification.",
   "occurrence": 1
 }
 ```
@@ -38,7 +38,7 @@ Record each issue as:
 
 ## Add comments
 
-- Use `scripts/add_precise_comments.py` from this skill for minimum-range native Word comments. Do not use a paragraph-only helper when the issue is a smaller text span.
+- `scripts/add_precise_comments.py` only adds minimum-range native Word comments. If using it after direct edits, resolve anchors and targets against the edited file; it does not apply corrections or colors. Do not use a paragraph-only helper when the issue is a smaller text span.
 - Do not simulate comments with highlighted body text, text boxes, or appended review tables.
 - Keep the original visible text unchanged in comment-only mode.
 - Preserve existing comments and tracked changes unless the user explicitly asks to remove or resolve them.
@@ -47,10 +47,10 @@ Record each issue as:
 ## Structural verification
 
 1. Extract comments and confirm the expected count and readable text.
-2. Run `scripts/verify_commented_docx.py` from this skill.
+2. In comment-only mode run `scripts/verify_commented_docx.py`. For direct edits, use the ledger-based verification in `word-edit-output.md`; the existing helper assumes unchanged text.
 3. Test ZIP/package integrity.
 4. Confirm each comment ID has a range start, range end, and reference.
-5. Confirm the visible document text, tables, notes, and tracked-change count match the source.
+5. Confirm visible text matches the source plus exactly the ledger changes; preserve unrelated tables, notes, and all existing tracked changes. In comment-only mode require all visible text to match the source.
 6. Extract anchored text and confirm that every range equals its ledger `target`, not the containing paragraph.
 
 ## Visual verification
@@ -67,5 +67,5 @@ Record each issue as:
 ## Delivery
 
 - Put only the final reviewed DOCX in the output folder unless the user requested other artifacts.
-- Use a descriptive filename ending in `审校批注版.docx` or the user's preferred naming convention.
+- Use a descriptive filename ending in `审校修改批注版.docx` (or `审校批注版.docx` in comment-only mode) or the user's preferred naming convention.
 - Report the comment count, review coverage, structural checks, and any visual-QA limitation.
